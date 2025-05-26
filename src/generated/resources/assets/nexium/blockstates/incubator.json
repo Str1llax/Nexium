@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "nexium:block/incubator",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "nexium:block/incubator"
+    },
+    "facing=south": {
+      "model": "nexium:block/incubator",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "nexium:block/incubator",
+      "y": 270
+    }
+  }
+}

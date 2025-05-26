@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "nexium:block/hevea_planks",
+    "side": "nexium:block/hevea_planks",
+    "top": "nexium:block/hevea_planks"
+  }
+}

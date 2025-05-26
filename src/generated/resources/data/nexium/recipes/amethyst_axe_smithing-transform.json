@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "nexium:amethyst"
+  },
+  "base": {
+    "item": "minecraft:iron_axe"
+  },
+  "result": {
+    "item": "nexium:amethyst_axe"
+  },
+  "template": {
+    "item": "nexium:amethyst_upgrade_smithing_template"
+  }
+}

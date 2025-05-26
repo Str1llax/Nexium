@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nexium:block/hevea_slab"
+    },
+    "type=double": {
+      "model": "nexium:block/hevea_planks"
+    },
+    "type=top": {
+      "model": "nexium:block/hevea_slab_top"
+    }
+  }
+}

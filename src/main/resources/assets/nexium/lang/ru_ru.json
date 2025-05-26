@@ -1,0 +1,43 @@
+{
+  "tab.nexium.main_tab": "Nexium",
+
+  "item.nexium.amethyst": "Аметист",
+  "item.nexium.debug_item": "Предмет отладки",
+  "item.nexium.shawarma": "Шаурма",
+  "item.nexium.pine_cone": "Еловая шишка",
+  "item.nexium.murasama": "§4Мурасама",
+  "item.nexium.amethyst_sword": "Аметистовый меч",
+  "item.nexium.amethyst_pickaxe": "Аметистовая кирка",
+  "item.nexium.amethyst_axe": "Аметистовый топор",
+  "item.nexium.amethyst_shovel": "Аметистовая лопата",
+  "item.nexium.amethyst_hoe": "Аметистовая мотыга",
+  "item.nexium.amethyst_helmet": "Аметистовый шлем",
+  "item.nexium.amethyst_chestplate": "Аметистовый нагрудник",
+  "item.nexium.amethyst_leggings": "Аметистовые поножи",
+  "item.nexium.amethyst_boots": "Аметистовые ботинки",
+
+  "block.nexium.cut_amethyst_block": "Огранённый аметистовый блок",
+  "block.nexium.sound_block": "Кричалка",
+  "block.nexium.hevea_log": "Бревно гевеи",
+  "block.nexium.hevea_wood": "Гевея",
+  "block.nexium.stripped_hevea_log": "Обтёсанное бревно гевеи",
+  "block.nexium.stripped_hevea_wood": "Обтёсанная гевея",
+  "block.nexium.hevea_planks": "Доски из гевеи",
+  "block.nexium.hevea_slab": "Плита из гевеи",
+  "block.nexium.hevea_stairs": "Ступеньки из гевеи",
+  "block.nexium.hevea_fence": "Забор из гевеи",
+  "block.nexium.hevea_fence_gate": "Ворота из гевеи",
+  "block.nexium.hevea_button": "Кнопка из гевеи",
+  "block.nexium.hevea_pressure_plate": "Нажимная пластина из гевеи",
+  "block.nexium.hevea_door": "Дверь из гевеи",
+  "block.nexium.hevea_trapdoor": "Люк из гевеи",
+  "block.nexium.hevea_leaves": "Листва гевеи",
+  "block.nexium.hevea_sapling": "Саженец гевеи",
+  "block.nexium.hevea_sign": "Табличка из гевеи",
+  "block.nexium.hevea_hanging_sign": "Подвесная табличка из гевеи",
+
+  "chat.nexium.debug_item": "ID Блока: ",
+  "chat.nexium.debug_item.entity": "ID сущности: ",
+
+  "tooltip.nexium.shawarma": "§7ВКУСНЯТИНА!"
+}

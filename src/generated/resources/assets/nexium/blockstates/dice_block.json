@@ -1,0 +1,29 @@
+{
+  "variants": {
+    "number=down": {
+      "model": "nexium:block/dice_block",
+      "y": 90,
+      "x": 270
+    },
+    "number=east": {
+      "model": "nexium:block/dice_block",
+      "x": 90
+    },
+    "number=north": {
+      "model": "nexium:block/dice_block"
+    },
+    "number=south": {
+      "model": "nexium:block/dice_block",
+      "x": 180
+    },
+    "number=up": {
+      "model": "nexium:block/dice_block",
+      "y": 90,
+      "x": 180
+    },
+    "number=west": {
+      "model": "nexium:block/dice_block",
+      "x": 270
+    }
+  }
+}

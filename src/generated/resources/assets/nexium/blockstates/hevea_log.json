@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "nexium:block/hevea_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "nexium:block/hevea_log"
+    },
+    "axis=z": {
+      "model": "nexium:block/hevea_log_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_end",
+  "features": "nexium:end_nexium_ore_placed",
+  "step": "underground_ores"
+}

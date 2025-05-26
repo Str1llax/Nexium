@@ -1,0 +1,20 @@
+{
+  "type": "nexium:incubating",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:stone"
+    },
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    }
+  ],
+  "output": {
+    "item": "nexium:stony_spawn_egg"
+  }
+}

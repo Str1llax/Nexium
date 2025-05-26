@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "tag": "nexium:cooked_meat"
+    }
+  ],
+  "result": {
+    "item": "nexium:shawarma"
+  }
+}

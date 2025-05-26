@@ -1,0 +1,16 @@
+{
+  "goofy_eating": {
+    "subtitles": "sounds.nexium.goofy_eating",
+    "sounds": [
+      "nexium:goofy_eating"
+    ]
+  },
+  "rick_astley": {
+    "sounds": [
+      {
+        "name": "nexium:rick_astley",
+        "stream": true
+      }
+    ]
+  }
+}

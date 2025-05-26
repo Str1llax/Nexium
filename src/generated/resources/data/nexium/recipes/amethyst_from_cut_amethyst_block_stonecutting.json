@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 4,
+  "ingredient": {
+    "item": "nexium:cut_amethyst_block"
+  },
+  "result": "nexium:amethyst"
+}
