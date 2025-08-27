@@ -1,6 +1,7 @@
 package com.str1llax.nexium.worldgen;
 
 import com.str1llax.nexium.Nexium;
+import com.str1llax.nexium.util.ModTags;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -40,7 +41,7 @@ public class NexiumBiomeModifiers {
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
         context.register(ADD_TREE_HEVEA, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
+                biomes.getOrThrow(ModTags.Biomes.IS_TEST),
                 HolderSet.direct(placedFeatures.getOrThrow(NexiumPlacedFeatures.HEVEA_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
     }

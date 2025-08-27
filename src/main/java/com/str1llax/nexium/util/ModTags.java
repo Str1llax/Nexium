@@ -1,14 +1,25 @@
 package com.str1llax.nexium.util;
 
 import com.str1llax.nexium.Nexium;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 public class ModTags {
+    public static class Biomes {
+        //public static final TagKey<Biome> NAME = tag("name");
+        public static final TagKey<Biome> IS_TEST = tag("is_test");
+
+        private static TagKey<Biome> tag(String name) {
+            return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Nexium.MOD_ID, name));
+        }
+    }
+
     public static class Blocks {
         //public static final TagKey<Block> NAME = tag("name");
         public static final TagKey<Block> NEEDS_AMETHYST_TOOL = tag("needs_amethyst_tool");

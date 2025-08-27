@@ -7,6 +7,7 @@ import com.str1llax.nexium.datagen.models.NexiumBlockStateProvider;
 import com.str1llax.nexium.datagen.models.NexiumItemModelProvider;
 import com.str1llax.nexium.datagen.pois.NexiumPoITypeTagsProvider;
 import com.str1llax.nexium.datagen.recipes.NexiumRecipeProvider;
+import com.str1llax.nexium.datagen.tags.NexiumBiomeTagGenerator;
 import com.str1llax.nexium.datagen.tags.NexiumBlockTagGenerator;
 import com.str1llax.nexium.datagen.tags.NexiumItemTagGenerator;
 import com.str1llax.nexium.datagen.worldgen.NexiumWorldGenProvider;
@@ -43,5 +44,6 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new NexiumPoITypeTagsProvider(packOutput, lookupProvider, existingFileHelper));
 
         generator.addProvider(event.includeServer(), new NexiumWorldGenProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new NexiumBiomeTagGenerator(packOutput, lookupProvider, existingFileHelper));
     }
 }

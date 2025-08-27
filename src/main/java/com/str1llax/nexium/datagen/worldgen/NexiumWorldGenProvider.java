@@ -4,6 +4,7 @@ import com.str1llax.nexium.Nexium;
 import com.str1llax.nexium.worldgen.NexiumBiomeModifiers;
 import com.str1llax.nexium.worldgen.NexiumConfiguredFeatures;
 import com.str1llax.nexium.worldgen.NexiumPlacedFeatures;
+import com.str1llax.nexium.worldgen.biomes.NexiumBiomes;
 import com.str1llax.nexium.worldgen.dimension.NexiumDimensions;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
@@ -21,6 +22,7 @@ public class NexiumWorldGenProvider extends DatapackBuiltinEntriesProvider {
             .add(Registries.CONFIGURED_FEATURE, NexiumConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, NexiumPlacedFeatures::bootstrap)
             .add(ForgeRegistries.Keys.BIOME_MODIFIERS, NexiumBiomeModifiers::bootstrap)
+            .add(Registries.BIOME, NexiumBiomes::bootstrap)
             .add(Registries.LEVEL_STEM, NexiumDimensions::bootstrapStem);
 
     public NexiumWorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
