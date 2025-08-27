@@ -19,6 +19,7 @@ public class NexiumTabs {
                     .title(Component.translatable("tab." + Nexium.MOD_ID + ".main_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(NexiumItems.DEBUG_ITEM.get());
+                        pOutput.accept(NexiumBlocks.TEST_SPHERE.get());
                         pOutput.accept(NexiumBlocks.SOUND_BLOCK.get());
                         pOutput.accept(NexiumItems.RICK_ASTLEY_MUSIC_DISK.get());
                         pOutput.accept(NexiumItems.SHAWARMA.get());
@@ -29,6 +30,7 @@ public class NexiumTabs {
                         pOutput.accept(NexiumItems.CORN_SEEDS.get());
                         pOutput.accept(NexiumItems.RETURN_STONE.get());
                         pOutput.accept(NexiumItems.MURASAMA.get());
+                        pOutput.accept(NexiumItems.YAMATO.get());
                         pOutput.accept(NexiumItems.DICE.get());
                         pOutput.accept(NexiumBlocks.DICE_BLOCK.get());
                         pOutput.accept(NexiumBlocks.MATRIX_PORTAL.get());

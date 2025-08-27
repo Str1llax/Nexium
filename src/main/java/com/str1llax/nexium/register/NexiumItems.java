@@ -88,6 +88,9 @@ public class NexiumItems {
     public static final RegistryObject<Item> MURASAMA = register("murasama",
             () -> new MurasamaItem());
 
+    public static final RegistryObject<Item> YAMATO = register("yamato",
+            () -> new YamatoItem());
+
     public static final RegistryObject<Item> AMETHYST_SWORD = register("amethyst_sword",
             () -> new SwordItem(ModToolTiers.AMETHYST, 3, -2.4f, new Item.Properties()));
 

@@ -1,0 +1,27 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "nexium:item/yamato_2d"
+  },
+  "perspectives": {
+    "ground": {
+      "parent": "nexium:item/yamato_3d"
+    },
+    "fixed": {
+      "parent": "nexium:item/yamato_3d"
+    },
+    "thirdperson_righthand": {
+      "parent": "nexium:item/yamato_3d"
+    },
+    "thirdperson_lefthand": {
+      "parent": "nexium:item/yamato_3d"
+    },
+    "firstperson_righthand": {
+      "parent": "nexium:item/yamato_3d"
+    },
+    "firstperson_lefthand": {
+      "parent": "nexium:item/yamato_3d"
+    }
+  }
+}

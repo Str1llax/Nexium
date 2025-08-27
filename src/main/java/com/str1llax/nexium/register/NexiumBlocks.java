@@ -33,6 +33,9 @@ public class NexiumBlocks {
     public static final RegistryObject<Block> CUT_AMETHYST_BLOCK = registerBlock("cut_amethyst_block",
             () -> new BaseBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK)));
 
+    public static final RegistryObject<Block> TEST_SPHERE = registerBlock("test_sphere",
+            () -> new SphereBlock());
+
     public static final RegistryObject<Block> DICE_BLOCK = registerBlock("dice_block",
             () -> new DiceBlock(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).noLootTable()));
 

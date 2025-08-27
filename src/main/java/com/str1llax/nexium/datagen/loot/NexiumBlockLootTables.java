@@ -44,6 +44,7 @@ public class NexiumBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(NexiumBlocks.HEVEA_TRAPDOOR.get());
         this.dropSelf(NexiumBlocks.HEVEA_FENCE.get());
         this.dropSelf(NexiumBlocks.HEVEA_FENCE_GATE.get());
+        this.dropSelf(NexiumBlocks.TEST_SPHERE.get());
 
         this.add(NexiumBlocks.POTTED_HEVEA_SAPLING.get(), block -> createPotFlowerItemTable(NexiumBlocks.POTTED_HEVEA_SAPLING.get()));
         this.add(NexiumBlocks.HEVEA_LEAVES.get(), block -> createLeavesDrops(block, NexiumBlocks.HEVEA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));

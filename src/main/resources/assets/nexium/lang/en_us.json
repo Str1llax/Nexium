@@ -11,6 +11,7 @@
   "item.nexium.corn_seeds": "Corn Seeds",
   "item.nexium.return_stone": "Stone Of Return",
   "item.nexium.murasama": "§4Murasama",
+  "item.nexium.yamato": "§1Yamato",
   "item.nexium.dice": "Dice",
   "Item.nexium.amethyst_upgrade_smithing_template": "Smithing Template",
   "item.nexium.amethyst_sword": "Amethyst Sword",
@@ -30,6 +31,7 @@
   "item.nexium.nexium_dust": "Nexium Dust",
 
   "block.nexium.cut_amethyst_block": "Cut Block of Amethyst",
+  "block.nexium.test_sphere": "Test Sphere",
   "block.nexium.sound_block": "Sound Block",
   "block.nexium.hevea_log": "Hevea Log",
   "block.nexium.hevea_wood": "Hevea Wood",
@@ -57,8 +59,8 @@
   "block.nexium.nether_nexium_ore": "Nether Nexium Ore",
   "block.nexium.end_nexium_ore": "End Nexium Ore",
 
-  "chat.nexium.debug_item": "Block's ID: ",
-  "chat.nexium.debug_item.entity": "Entity ID: ",
+  "chat.nexium.debug_item": "Block's ID: %s",
+  "chat.nexium.debug_item.entity": "Entity ID: %s",
 
   "description.nexium.amethyst_upgrade_applies_to": "Iron Equipment",
   "description.nexium.amethyst_upgrade_ingredients": "Amethyst",
@@ -82,5 +84,8 @@
   "entity.nexium.nexium_boat": "Boat",
   "entity.nexium.nexium_chest_boat": "Boat with Chest",
 
-  "sounds.nexium.goofy_eating": "*Goofy eats*"
+  "sounds.nexium.goofy_eating": "*Goofy eats*",
+
+  "jade.nexium.incubator": "Progress: %d%%",
+  "config.jade.plugin_nexium.incubator": "Incubator tooltip"
 }

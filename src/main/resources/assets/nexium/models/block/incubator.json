@@ -4,7 +4,7 @@
 	"render_type": "minecraft:translucent",
 	"textures": {
 		"0": "nexium:block/incubator",
-		"particle": "minecraft:block/iron_block"
+		"particle": "block/iron_block"
 	},
 	"elements": [
 		{

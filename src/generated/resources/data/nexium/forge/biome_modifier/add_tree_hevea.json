@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#forge:is_plains",
+  "biomes": "#nexium:is_test",
   "features": "nexium:hevea_placed",
   "step": "vegetal_decoration"
 }
