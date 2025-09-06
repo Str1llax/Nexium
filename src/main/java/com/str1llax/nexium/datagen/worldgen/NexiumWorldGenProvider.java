@@ -6,6 +6,8 @@ import com.str1llax.nexium.worldgen.NexiumConfiguredFeatures;
 import com.str1llax.nexium.worldgen.NexiumPlacedFeatures;
 import com.str1llax.nexium.worldgen.biomes.NexiumBiomes;
 import com.str1llax.nexium.worldgen.dimension.NexiumDimensions;
+import com.str1llax.nexium.worldgen.levelgen.NexiumNoiseGeneratorSettings;
+import com.str1llax.nexium.worldgen.levelgen.NexiumNoiseRouters;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -21,8 +23,10 @@ public class NexiumWorldGenProvider extends DatapackBuiltinEntriesProvider {
             .add(Registries.DIMENSION_TYPE, NexiumDimensions::bootstrapType)
             .add(Registries.CONFIGURED_FEATURE, NexiumConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, NexiumPlacedFeatures::bootstrap)
-            .add(ForgeRegistries.Keys.BIOME_MODIFIERS, NexiumBiomeModifiers::bootstrap)
             .add(Registries.BIOME, NexiumBiomes::bootstrap)
+            .add(ForgeRegistries.Keys.BIOME_MODIFIERS, NexiumBiomeModifiers::bootstrap)
+            .add(Registries.DENSITY_FUNCTION, NexiumNoiseRouters::bootstrap)
+            .add(Registries.NOISE_SETTINGS, NexiumNoiseGeneratorSettings::bootstrap)
             .add(Registries.LEVEL_STEM, NexiumDimensions::bootstrapStem);
 
     public NexiumWorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

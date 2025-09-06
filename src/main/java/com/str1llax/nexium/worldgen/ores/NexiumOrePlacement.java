@@ -1,4 +1,4 @@
-package com.str1llax.nexium.worldgen;
+package com.str1llax.nexium.worldgen.ores;
 
 import net.minecraft.world.level.levelgen.placement.*;
 

@@ -1,6 +1,7 @@
 package com.str1llax.nexium.worldgen.biomes;
 
 import com.str1llax.nexium.Nexium;
+import com.str1llax.nexium.util.ModTweaks;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
@@ -14,14 +15,15 @@ import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import javax.annotation.Nullable;
+import java.awt.*;
 
 public class NexiumBiomes {
     public static final ResourceKey<Biome> TEST_BIOME = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Nexium.MOD_ID, "test_biome"));
 
     public static void bootstrap(BootstapContext<Biome> pContext) {
-        HolderGetter<PlacedFeature> holdergetter = pContext.lookup(Registries.PLACED_FEATURE);
-        HolderGetter<ConfiguredWorldCarver<?>> holdergetter1 = pContext.lookup(Registries.CONFIGURED_CARVER);
-        pContext.register(TEST_BIOME, testBiome(holdergetter, holdergetter1));
+        HolderGetter<PlacedFeature> placedFeatures = pContext.lookup(Registries.PLACED_FEATURE);
+        HolderGetter<ConfiguredWorldCarver<?>> worldCarvers = pContext.lookup(Registries.CONFIGURED_CARVER);
+        pContext.register(TEST_BIOME, testBiome(placedFeatures, worldCarvers));
     }
 
     protected static int calculateSkyColor(float pTemperature) {
@@ -55,11 +57,17 @@ public class NexiumBiomes {
     public static Biome testBiome(HolderGetter<PlacedFeature> pPlacedFeatures, HolderGetter<ConfiguredWorldCarver<?>> pWorldCarvers) {
         MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
         BiomeGenerationSettings.Builder biomegenerationsettings$builder = new BiomeGenerationSettings.Builder(pPlacedFeatures, pWorldCarvers);
-        globalOverworldGeneration(biomegenerationsettings$builder);
+        //globalOverworldGeneration(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
-        BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
+        //BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
+        float temperature = 0.8f;
+        int waterColor = ModTweaks.ColorToInt(new Color(34, 231, 170));
+        int waterFogColor = ModTweaks.ColorToInt(new Color(32, 113, 138));
+        int grassColorOverride = ModTweaks.ColorToInt(new Color(147, 17, 213));
+        int foliageColorOverride = ModTweaks.ColorToInt(new Color(32, 61, 197, 255));
+        Music biomeMusic = null;
 
-        return biome(true, 0.8f, 0.4F, 4159204, 329011, null, null, mobspawnsettings$builder, biomegenerationsettings$builder, null);
+        return biome(true, temperature, 0.4F, waterColor, waterFogColor, grassColorOverride, foliageColorOverride, mobspawnsettings$builder, biomegenerationsettings$builder, biomeMusic);
     }
 }

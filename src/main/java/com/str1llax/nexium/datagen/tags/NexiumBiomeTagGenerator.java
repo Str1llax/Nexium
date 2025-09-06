@@ -6,7 +6,6 @@ import com.str1llax.nexium.worldgen.biomes.NexiumBiomes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
-import net.minecraft.tags.BiomeTags;
 
 import java.util.concurrent.CompletableFuture;
 

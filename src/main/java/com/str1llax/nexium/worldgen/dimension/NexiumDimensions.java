@@ -3,6 +3,8 @@ package com.str1llax.nexium.worldgen.dimension;
 import com.mojang.datafixers.util.Pair;
 import com.str1llax.nexium.Nexium;
 import com.str1llax.nexium.worldgen.biomes.NexiumBiomes;
+import com.str1llax.nexium.worldgen.levelgen.NexiumNoiseGeneratorSettings;
+import com.str1llax.nexium.worldgen.levelgen.NexiumNoiseSettings;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -38,8 +40,8 @@ public class NexiumDimensions {
                 true, // bedWorks
                 false, // respawnAnchorWorks
                 0, // minY
-                256, // height
-                256, // logicalHeight
+                512, // height
+                512, // logicalHeight
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS, // effectsLocation
                 1.0f, // ambientLight
@@ -51,22 +53,19 @@ public class NexiumDimensions {
         HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
         HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
 
-        NoiseBasedChunkGenerator wrappedChunkGenerator = new NoiseBasedChunkGenerator(
-                new FixedBiomeSource(biomeRegistry.getOrThrow(Biomes.CHERRY_GROVE)),
-                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
+        NoiseBasedChunkGenerator testChunkGenerator = new NoiseBasedChunkGenerator(
+                new FixedBiomeSource(biomeRegistry.getOrThrow(NexiumBiomes.TEST_BIOME)),
+                noiseGenSettings.getOrThrow(NexiumNoiseGeneratorSettings.TEST_NOISE));
 
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(
                                 Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(NexiumBiomes.TEST_BIOME))
-//                                Pair.of(Climate.parameters(0.1F, 0.2F, 0.0F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.PLAINS)),
-//                                Pair.of(Climate.parameters(0.3F, 0.6F, 0.1F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.OCEAN)),
-//                                Pair.of(Climate.parameters(0.4F, 0.3F, 0.2F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.BEACH))
 
                         ))),
                 noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
 
-        LevelStem stem = new LevelStem(dimTypes.getOrThrow(NexiumDimensions.MATRIX_DIM_TYPE), noiseBasedChunkGenerator);
+        LevelStem stem = new LevelStem(dimTypes.getOrThrow(NexiumDimensions.MATRIX_DIM_TYPE), testChunkGenerator);
 
         context.register(MATRIX_KEY, stem);
     }

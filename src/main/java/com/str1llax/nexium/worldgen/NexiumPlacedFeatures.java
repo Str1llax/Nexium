@@ -2,6 +2,7 @@ package com.str1llax.nexium.worldgen;
 
 import com.str1llax.nexium.Nexium;
 import com.str1llax.nexium.register.NexiumBlocks;
+import com.str1llax.nexium.worldgen.ores.NexiumOrePlacement;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;

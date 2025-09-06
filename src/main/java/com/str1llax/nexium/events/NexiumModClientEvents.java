@@ -5,19 +5,37 @@ import com.str1llax.nexium.blocks.entity.NexiumBlockEntities;
 import com.str1llax.nexium.blocks.entity.renderer.IncubatorBlockEntityRenderer;
 import com.str1llax.nexium.entity.client.NexiumModelLayers;
 import com.str1llax.nexium.entity.client.StonyModel;
+import com.str1llax.nexium.register.NexiumBlocks;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.RenderHighlightEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Nexium.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class NexiumModClientEvents {
+
+    @SubscribeEvent
+    public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+        event.register((state, world, pos, tintIndex) -> {
+            if(world == null || pos == null) return FoliageColor.getDefaultColor();
+            return BiomeColors.getAverageFoliageColor(world, pos);
+        }, NexiumBlocks.HEVEA_LEAVES.get());
+    }
+
+    @SubscribeEvent
+    public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+        event.register((stack, tintIndex) -> FoliageColor.getDefaultColor(), NexiumBlocks.HEVEA_LEAVES.get());
+    }
+
 
     @SubscribeEvent
     public static void registryLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
