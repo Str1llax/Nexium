@@ -32,8 +32,20 @@ public class NexiumBiomes {
         return Mth.hsvToRgb(0.62222224F - $$1 * 0.05F, 0.5F + $$1 * 0.1F, 1.0F);
     }
 
-    private static Biome biome(boolean pHasPrecipitation, float pTemperature, float pDownfall, int pWaterColor, int pWaterFogColor, @Nullable Integer pGrassColorOverride, @Nullable Integer pFoliageColorOverride, MobSpawnSettings.Builder pMobSpawnSettings, BiomeGenerationSettings.Builder pGenerationSettings, @Nullable Music pBackgroundMusic) {
-        BiomeSpecialEffects.Builder biomespecialeffects$builder = (new BiomeSpecialEffects.Builder()).waterColor(pWaterColor).waterFogColor(pWaterFogColor).fogColor(12638463).skyColor(calculateSkyColor(pTemperature)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(pBackgroundMusic);
+    private static Biome biome(boolean pHasPrecipitation, float pTemperature, float pDownfall, int pWaterColor, int pWaterFogColor, @Nullable Integer pFogColor, @Nullable Integer pSkyColor, @Nullable Integer pGrassColorOverride, @Nullable Integer pFoliageColorOverride, MobSpawnSettings.Builder pMobSpawnSettings, BiomeGenerationSettings.Builder pGenerationSettings, @Nullable Music pBackgroundMusic) {
+        BiomeSpecialEffects.Builder biomespecialeffects$builder = (
+                new BiomeSpecialEffects.Builder())
+                .waterColor(pWaterColor)
+                .waterFogColor(pWaterFogColor)
+                .fogColor((pFogColor != null) ? pFogColor : 12638463)
+                .skyColor(calculateSkyColor(pTemperature))
+                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                .backgroundMusic(pBackgroundMusic);
+
+        if (pSkyColor != null) {
+             biomespecialeffects$builder.skyColor(pSkyColor);
+        }
+
         if (pGrassColorOverride != null) {
             biomespecialeffects$builder.grassColorOverride(pGrassColorOverride);
         }
@@ -60,14 +72,16 @@ public class NexiumBiomes {
         //globalOverworldGeneration(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultOres(biomegenerationsettings$builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
-        //BiomeDefaultFeatures.addDefaultMushrooms(biomegenerationsettings$builder);
+
         float temperature = 0.8f;
         int waterColor = ModTweaks.ColorToInt(new Color(34, 231, 170));
-        int waterFogColor = ModTweaks.ColorToInt(new Color(32, 113, 138));
-        int grassColorOverride = ModTweaks.ColorToInt(new Color(147, 17, 213));
-        int foliageColorOverride = ModTweaks.ColorToInt(new Color(32, 61, 197, 255));
+        int waterFogColor = ModTweaks.ColorToInt(new Color(42, 206, 28));
+        Integer grassColorOverride = ModTweaks.ColorToInt(new Color(161, 114, 189));
+        Integer foliageColorOverride = ModTweaks.ColorToInt(new Color(121, 138, 220));
+        Integer fogColor = ModTweaks.ColorToInt(new Color(60, 217, 15));
+        Integer skyColor = ModTweaks.ColorToInt(new Color(215, 27, 27));
         Music biomeMusic = null;
 
-        return biome(true, temperature, 0.4F, waterColor, waterFogColor, grassColorOverride, foliageColorOverride, mobspawnsettings$builder, biomegenerationsettings$builder, biomeMusic);
+        return biome(true, temperature, 0.4F, waterColor, waterFogColor, fogColor, skyColor, grassColorOverride, foliageColorOverride, mobspawnsettings$builder, biomegenerationsettings$builder, biomeMusic);
     }
 }

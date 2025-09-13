@@ -4,6 +4,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -22,11 +26,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Random;
 
 public class DebugItem extends Item {
     public DebugItem(Properties pProperties) {
         super(pProperties);
     }
+
 
 
     @Override
@@ -36,6 +42,12 @@ public class DebugItem extends Item {
         }
 
         return super.use(pLevel, pPlayer, pUsedHand);
+    }
+
+    public void onKeyPressed(Player player, Level level) {
+        if(!level.isClientSide) {
+            player.sendSystemMessage(Component.literal("a"));
+        }
     }
 
     @Override

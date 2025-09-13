@@ -31,7 +31,7 @@ public class NexiumDimensions {
 
     public static void bootstrapType(BootstapContext<DimensionType> context) {
         context.register(MATRIX_DIM_TYPE, new DimensionType(
-                OptionalLong.of(12000), // fixedTime
+                OptionalLong.empty(), // fixedTime
                 false, // hasSkyLight
                 false, // hasCeiling
                 false, // ultraWarm

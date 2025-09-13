@@ -3,25 +3,51 @@ package com.str1llax.nexium.events;
 import com.str1llax.nexium.Nexium;
 import com.str1llax.nexium.blocks.entity.NexiumBlockEntities;
 import com.str1llax.nexium.blocks.entity.renderer.IncubatorBlockEntityRenderer;
+import com.str1llax.nexium.entity.NexiumEntities;
+import com.str1llax.nexium.entity.client.NexiumBoatRenderer;
 import com.str1llax.nexium.entity.client.NexiumModelLayers;
 import com.str1llax.nexium.entity.client.StonyModel;
+import com.str1llax.nexium.entity.client.StonyRenderer;
 import com.str1llax.nexium.register.NexiumBlocks;
+import com.str1llax.nexium.register.NexiumMenus;
+import com.str1llax.nexium.screen.screens.IncubatorScreen;
+import com.str1llax.nexium.util.ModKeyBindings;
+import com.str1llax.nexium.util.ModWoodTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.client.event.RenderHighlightEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = Nexium.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class NexiumModClientEvents {
+    @SubscribeEvent
+    public void onClientSetup(FMLClientSetupEvent event) {
+        Sheets.addWoodType(ModWoodTypes.HEVEA);
+
+        EntityRenderers.register(NexiumEntities.STONY.get(), StonyRenderer::new);
+
+        EntityRenderers.register(NexiumEntities.NEXIUM_BOAT.get(), pContext -> new NexiumBoatRenderer(pContext, false));
+        EntityRenderers.register(NexiumEntities.NEXIUM_CHEST_BOAT.get(), pContext -> new NexiumBoatRenderer(pContext, true));
+
+        EntityRenderers.register(NexiumEntities.DICE_PROJECTILE.get(), ThrownItemRenderer::new);
+
+        MenuScreens.register(NexiumMenus.INCUBATOR_MENU.get(), IncubatorScreen::new);
+    }
 
     @SubscribeEvent
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
@@ -36,6 +62,10 @@ public class NexiumModClientEvents {
         event.register((stack, tintIndex) -> FoliageColor.getDefaultColor(), NexiumBlocks.HEVEA_LEAVES.get());
     }
 
+    @SubscribeEvent
+    public static void registerKeymapppings(RegisterKeyMappingsEvent event) {
+        event.register(ModKeyBindings.activateDebugItemKey);
+    }
 
     @SubscribeEvent
     public static void registryLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {

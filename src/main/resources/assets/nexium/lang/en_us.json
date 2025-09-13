@@ -84,6 +84,9 @@
   "entity.nexium.nexium_boat": "Boat",
   "entity.nexium.nexium_chest_boat": "Boat with Chest",
 
+  "key.category.nexium.general": "Nexium General",
+  "key.nexium.activate_debug_item": "Activate Debug item",
+
   "sounds.nexium.goofy_eating": "*Goofy eats*",
 
   "jade.nexium.incubator": "Progress: %d%%",

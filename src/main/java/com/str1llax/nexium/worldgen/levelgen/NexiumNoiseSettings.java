@@ -9,6 +9,7 @@ public class NexiumNoiseSettings {
     protected static final NoiseSettings TEST_NOISE_SETTINGS = create(0, 512, 4, 1);
 
     // copy of vanilla methods
+    // This thing connects chunks between each other
     private static DataResult<NoiseSettings> guardY(NoiseSettings noiseSettings) {
         if (noiseSettings.minY() + noiseSettings.height() > DimensionType.MAX_Y + 1) {
             return DataResult.error(() -> "min_y + height cannot be higher than: " + (DimensionType.MAX_Y + 1));
